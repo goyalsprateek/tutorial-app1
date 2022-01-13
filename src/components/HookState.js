@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 
-
 function HookState() {
 
 const initialValue = {
@@ -9,14 +8,12 @@ const initialValue = {
 }
     const [data,setData] =useState(initialValue)
 
-    function clickHandler(){
-
-    }
-
     return (
         <div>
             Count {data.count}
-            <button onClick={clickHandler}>Increment</button>
+            <button onClick={e=>setData({count:data.count+1})}>Increment</button>
+            <input type='text' value={data.name} onChange={e=>setData({name:e.target.value})} />
+            <h2>{JSON.stringify(data)}</h2>
         </div>
     )
 }
