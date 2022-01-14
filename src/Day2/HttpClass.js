@@ -7,7 +7,8 @@ import axios from 'axios'
         super(props)
     
         this.state = {
-             users:[]
+             users:[],
+             userid:''
         }
     }
     
@@ -24,13 +25,33 @@ import axios from 'axios'
         })
     }
 
+    componentDidUpdate(prevProps,prevState){
+        if(prevState.userid !== this.state.userid){
+        console.log('executing component update')
+        axios.get(`https://jsonplaceholder.typicode.com/users/${this.state.userid}`)
+        .then(response => {
+            this.setState({
+                users:[response.data]
+            })
+        })
+        .catch(error => {
+            console.log('in error')
+            console.log(error)
+        })
+    }
+    }
+
     render() {
-        const {users} = this.state
+        const {users,userid} = this.state
         return (
+
             <div>
+                <input type='text' value={userid} onChange={e=>this.setState({
+                    userid:e.target.value
+                })} />
                 {
                     users.length?
-                    users.map(user => <h2 key={user.id}>{user.name}</h2>):
+                    users.map(user => <h2 key={user.id}>{user.id}{user.name}</h2>):
                     'No Data.'
                 }
             </div>

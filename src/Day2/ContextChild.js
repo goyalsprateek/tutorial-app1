@@ -1,5 +1,5 @@
 import React from "react";
-import { UserContext } from "./Context1";
+import { UserContext,UserContext2 } from "./Context1";
 
 function ContextChild() {
   return (
@@ -7,7 +7,15 @@ function ContextChild() {
         <UserContext.Consumer>
             {
                 user => {
-                    return <div>Value of conext is {user}</div>
+                    return (
+                      <UserContext2.Consumer>
+                        {
+                          user2 => {
+                            return <div>Value of conext1 is {user} and context2 is {user2}</div>
+                          }
+                        }
+                      </UserContext2.Consumer>
+                    )
                 }
             }
         </UserContext.Consumer>

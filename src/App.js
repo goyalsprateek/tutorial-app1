@@ -20,6 +20,11 @@ import ClassExample from "./Day2/ClassExample";
 import Hook2 from "./Day2/Hook2";
 import HttpClass from "./Day2/HttpClass";
 import Counter from "./Day2/Counter";
+import HttpClassPost from "./Day2/HttpClassPost";
+import HttpFunction1 from "./Day2/HttpFunction1";
+import HttpFunction2 from "./Day2/HttpFunction2";
+import Context1 from "./Day2/Context1";
+import RefExample2 from "./Day2/RefExample2";
 
 
 function App() {
@@ -53,7 +58,7 @@ function App() {
         <ErrorComponent name='test' />
        </ErrorBoundary> */}
 
-       <HttpClass />
+       <RefExample2 />
 
     </div>
   );
