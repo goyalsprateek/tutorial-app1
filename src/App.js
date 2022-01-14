@@ -10,8 +10,17 @@ import ListRendering from "./components/ListRendering";
 import FormHandling from "./components/FormHandling";
 import LifecyclyParent from "./components/LifecyclyParent";
 import ErrorComponent from "./components/ErrorComponent";
-import ErrorBoundary from "./components/ErrorBoundary";
 import HookState from "./components/HookState";
+import Test1 from "./Day2/Test1";
+import ErrorBoundary from "./components/ErrorBoundary";
+import RefExample from "./Day2/RefExample";
+import PortalsExample from "./Day2/PortalsExample";
+import Hook1 from "./Day2/Hook1";
+import ClassExample from "./Day2/ClassExample";
+import Hook2 from "./Day2/Hook2";
+import HttpClass from "./Day2/HttpClass";
+import Counter from "./Day2/Counter";
+
 
 function App() {
   return (
@@ -35,12 +44,16 @@ function App() {
       {/* <FormHandling /> */}
 
       {/* <LifecyclyParent /> */}
-      {/* <ErrorBoundary>
-        <ErrorComponent />
-      </ErrorBoundary> */}
+       
+       {/* <ErrorBoundary>
+        <ErrorComponent name='Prateek' />
+       </ErrorBoundary>
 
-      <HookState />
+       <ErrorBoundary>
+        <ErrorComponent name='test' />
+       </ErrorBoundary> */}
 
+       <HttpClass />
 
     </div>
   );

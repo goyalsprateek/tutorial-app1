@@ -1,10 +1,12 @@
 import React from 'react'
 
-function ErrorComponent() {
-    throw new Error('Some error')
+function ErrorComponent({name}) {
+    if(name==='test'){
+    throw new Error('Not a name !')
+    }
     return (
         <div>
-            
+            Hello {name}
         </div>
     )
 }
