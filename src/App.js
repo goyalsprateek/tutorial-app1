@@ -1,65 +1,28 @@
 import logo from "./logo.svg";
+import {Routes,Route} from 'react-router-dom'
 import "./App.css";
-import Welcome from "./components/Welcome.js";
-import TestClassComponent from "./components/TestClassComponent";
-import EventHandler from "./components/EventHandler";
-import FunctionEvent from "./components/FunctionEvent";
-import ParentComponent from "./components/ParentComponent";
-import ConditionalRender from "./components/ConditionalRender";
-import ListRendering from "./components/ListRendering";
-import FormHandling from "./components/FormHandling";
-import LifecyclyParent from "./components/LifecyclyParent";
-import ErrorComponent from "./components/ErrorComponent";
-import HookState from "./components/HookState";
-import Test1 from "./Day2/Test1";
-import ErrorBoundary from "./components/ErrorBoundary";
-import RefExample from "./Day2/RefExample";
-import PortalsExample from "./Day2/PortalsExample";
-import Hook1 from "./Day2/Hook1";
-import ClassExample from "./Day2/ClassExample";
-import Hook2 from "./Day2/Hook2";
-import HttpClass from "./Day2/HttpClass";
-import Counter from "./Day2/Counter";
-import HttpClassPost from "./Day2/HttpClassPost";
-import HttpFunction1 from "./Day2/HttpFunction1";
-import HttpFunction2 from "./Day2/HttpFunction2";
-import Context1 from "./Day2/Context1";
-import RefExample2 from "./Day2/RefExample2";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ReducerExample3 from "./Day3/ReducerExample3";
+import Navbar1 from "./pages/Navbar1";
+import Contact from "./pages/Contact";
+import NoPageFound from "./pages/NoPageFound";
+import {Provider} from 'react-redux'
+import store from "./redux/store";
 
 function App() {
   return (
     <div className="App">
-      {/* <Welcome name="Prateek" lastName="Goel">
-        This is child component
-      </Welcome>
-      <TestClassComponent name="Prateek" lastName="Goel">
-        <button>Child Button</button>
-        </TestClassComponent> */}
-
-      {/* <EventHandler />
-        <FunctionEvent /> */}
-
-      {/* <ParentComponent />
-
-        <ConditionalRender /> */}
-
-      {/* <ListRendering /> */}
-
-      {/* <FormHandling /> */}
-
-      {/* <LifecyclyParent /> */}
-       
-       {/* <ErrorBoundary>
-        <ErrorComponent name='Prateek' />
-       </ErrorBoundary>
-
-       <ErrorBoundary>
-        <ErrorComponent name='test' />
-       </ErrorBoundary> */}
-
-       <RefExample2 />
-
+      <Provider store={store}>
+      <Navbar1 />
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="about" element={ <About /> } />
+        <Route path="contact" element={ <Contact /> } />
+        <Route path="*" element={ <NoPageFound /> } />
+      </Routes>
+      </Provider>
     </div>
   );
 }
